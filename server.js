@@ -10,7 +10,9 @@ let port = process.env.BACKEND_PORT || 27017;
 
 app.use(cors());
 app.use(express.json());
-
+app.get('/', (req, res)=>{
+  res.send('running')
+})
 app.use('/api', require('./routes/auth'))
 app.use('/api', require('./routes/noteroute'))
 
